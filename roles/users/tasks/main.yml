@@ -1,0 +1,12 @@
+---
+# http://grokbase.com/t/gg/ansible-project/16616rrhpx/is-the-user-module-idempotent
+- name: Create a login user
+  become: yes
+  user:
+    name: "{{ main_user }}"
+    password: "{{ main_user }}"
+    groups: admin
+    shell: /bin/bash
+    state: present
+    createhome: yes
+    update_password: on_create
