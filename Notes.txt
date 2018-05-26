@@ -1,0 +1,29 @@
+Workstation
+
+Overview
+
+Tools
+Issues
+
+Tools
+
+Package manager
+Shell
+Terminal
+Text editor
+Fuzzy finder
+Directory hopper
+Password manager
+Clipboard manager
+Application Launcher
+Window manager
+Text expander
+Video maker
+Diagram maker
+Gif maker
+
+Issues
+
+Changing host key and keyboard capture on vagrant
+default: Could not find disk for disk0s3 error message on vagrant up
+extra username

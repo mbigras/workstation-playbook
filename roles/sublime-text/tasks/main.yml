@@ -1,0 +1,22 @@
+---
+- name: Install Sublime Text
+  homebrew_cask:
+    name:
+      - sublime-text
+
+- name: Make Sublime Text Local dir
+  become: yes
+  file:
+    path: "/Users/{{ main_user }}/Library/Application Support/Sublime Text 3/Local"
+    state: directory
+    owner: "{{ main_user }}"
+    group: staff
+
+# https://forum.sublimetext.com/t/license-installation-silently/13749
+- name: Copy Sublime Text License
+  become: yes
+  copy:
+    src: files/License.sublime_license
+    dest: "/Users/{{ main_user }}/Library/Application Support/Sublime Text 3/Local"
+    owner: "{{ main_user }}"
+    group: staff
