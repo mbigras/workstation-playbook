@@ -1,0 +1,13 @@
+---
+- block:
+  
+    - name: Install iTerm2
+      homebrew_cask:
+        name: iterm2
+
+    - name: Copy configuration
+      copy:
+        src: com.googlecode.iterm2.plist
+        dest: "~/Library/Preferences"
+
+  become_user: vagrant
