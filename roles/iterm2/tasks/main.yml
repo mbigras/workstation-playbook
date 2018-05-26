@@ -1,13 +1,12 @@
 ---
-- block:
-  
-    - name: Install iTerm2
-      homebrew_cask:
-        name: iterm2
+- name: Install iTerm2
+  homebrew_cask:
+    name: iterm2
 
-    - name: Copy configuration
-      copy:
-        src: com.googlecode.iterm2.plist
-        dest: "~/Library/Preferences"
-
-  become_user: vagrant
+- name: Copy configuration
+  become: yes
+  copy:
+    src: com.googlecode.iterm2.plist
+    dest: "/Users/{{ main_user }}/Library/Preferences"
+    owner: "{{ main_user }}"
+    group: admin
